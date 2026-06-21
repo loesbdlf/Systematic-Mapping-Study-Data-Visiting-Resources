@@ -1,0 +1,168 @@
+version: 1.0
+name: architecture_extraction_schema
+description: >
+  Data extraction schema for architecture analysis in secure and
+  distributed data processing systems.
+
+fields:
+  DOI:
+    type: text
+  Title:
+    type: text
+  Authors:
+    type: text
+  Year:
+    type: integer
+  Domain:
+    type: categorical
+    description: Application area
+    values:
+      - Healthcare
+      - Genomics
+      - Finance
+      - Government
+      - IoT
+      - Industrial
+      - Education
+      - Cross-domain
+      - Other
+
+  Architecture topology:
+    type: categorical
+    description: Core structure of the architecture
+    values:
+      - Centralized
+      - Hierarchical
+      - Decentralized
+  Execution type:
+    type: categorical
+    description: How computation is executed
+    values:
+      - Federated learning
+      - Trusted environment
+      - Query-based
+      - Containerized execution
+      - Other
+  Coordination mechanism:
+    type: categorical
+    description: How nodes coordinate
+    values:
+      - Central orchestrator
+      - Federated coordinator
+      - Peer-to-peer
+      - Blockchain-coordinated
+      - Trusted third party
+      - Manual coordination
+      - Other
+  Governance:
+    type: categorical
+    values:
+      - Centralized
+      - Federated
+      - Consortium
+      - Contract-based
+      - Platform
+      - Decentralized
+      - Other
+  Security measures:
+    type: multi-select
+    description: How security is ensured
+    values:
+      - Differential privacy
+      - VPN
+      - Legal agreements
+      - Homomorphic encryption
+      - Firewall
+      - Authentication
+      - Manual approval
+      - Isolated computation environment
+      - Other
+  Computation location:
+    type: multi-select
+    description: Where computation is executed
+    values:
+      - Cloud
+      - VM
+      - Edge device
+      - Central server
+      - Database
+      - Federated databases
+      - Other
+  Data storage:
+    type: multi-select
+    description: Where data resides
+    values:
+      - Cloud
+      - VM
+      - Edge device
+      - Central server
+      - Database
+      - Federated databases
+      - Other
+  Data movement:
+    type: multi-select
+    description: Movement within the system
+    values:
+      - None
+      - Metadata
+      - Aggregates
+      - Model parameters
+      - Synthetic data
+      - Raw data
+  Output control:
+    type: categorical
+    description: How data export is controlled
+    values:
+      - Unrestricted
+      - Manual review
+      - Automated filtering
+      - Disclosure
+      - Other
+  Data output:
+    type: multi-select
+    description: What data can be exported
+    values:
+      - None
+      - Metadata
+      - Aggregates
+      - Model parameters
+      - Synthetic data
+      - Raw data
+  Components and responsibilities:
+    type: list
+    description: What parts make up the system
+  Architecture diagram:
+    type: image
+    description: System architecture figure
+  Summary of architecture:
+    type: text
+    description: Summary of functionality
+
+  Researcher autonomy:
+    type: ordinal
+    scale: [1, 2, 3, 4, 5]
+    description: Full code execution to fixed queries or predefined outputs
+  Data distribution:
+    type: ordinal
+    scale: [1, 2, 3, 4, 5]
+    description: Centralized to distributed
+  Data visibility:
+    type: ordinal
+    scale: [1, 2, 3, 4, 5]
+    description: Restricted to full visibility
+  Data identifiability:
+    type: ordinal
+    scale: [1, 2, 3, 4, 5]
+    description: Fully anonymized to fully personal
+  Output governance:
+    type: ordinal
+    scale: [1, 2, 3, 4, 5]
+    description: Unrestricted to fully controlled
+  Trust and control distribution:
+    type: ordinal
+    scale: [1, 2, 3, 4, 5]
+    description: Centralized to distributed
+  Auditability and traceability:
+    type: ordinal
+    scale: [1, 2, 3, 4, 5]
+    description: Limited to full auditability
